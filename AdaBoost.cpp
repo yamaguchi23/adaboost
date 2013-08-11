@@ -237,7 +237,7 @@ AdaBoost::DecisionStump AdaBoost::learnOptimalClassifier(const int featureIndex)
         }
         if (sortIndex >= sampleTotal_ - 1) break;
         
-        if (fabs(weightLabelSumLarger) < epsilonValue || fabs(weightSum_ - weightSumLarger) < epsilonValue) continue;
+        if (fabs(weightSumLarger) < epsilonValue || fabs(weightSum_ - weightSumLarger) < epsilonValue) continue;
         
         double outputLarger, outputSmaller;
         computeClassifierOutputs(weightSumLarger, weightLabelSumLarger, positiveWeightSumLarger, negativeWeightSumLarger,
